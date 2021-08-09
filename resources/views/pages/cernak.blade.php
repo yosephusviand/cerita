@@ -29,15 +29,15 @@
                                 @foreach ($data as $val)
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <embed src="{{ route('karya.pdf', $val->id) }}" type="application/pdf"
+                                            <embed src="{{ route('cernak.pdf', $val->id) }}" type="application/pdf"
                                                 width="100%">
                                                 <label for="">{{ $val->judul }}</label>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <a href="{{ route('karya.pdfdownload', $val->id) }}" class="btn btn-primary btn-block">Download</a>
+                                                    <a href="{{ route('cernak.pdfdownload', $val->id) }}" class="btn btn-primary btn-block">Download</a>
                                                 </div>
                                                 <div class="col-6">
-                                                    <a href="{{ route('karya.pdf', $val->id) }}" class="btn btn-primary btn-block" target="_blank">Baca</a>
+                                                    <a href="{{ route('cernak.pdf', $val->id) }}" class="btn btn-primary btn-block" target="_blank">Baca</a>
                                                 </div>
                                             </div>
                                         </div>

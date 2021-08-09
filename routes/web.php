@@ -20,11 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/cernak', [App\Http\Controllers\CernakController::class, 'index'])->name('cernak');
+
 Route::get('/karya', [\App\Http\Controllers\KaryaController::class, 'index'])->name('karya');
 Route::post('/karya', [\App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
-Route::get('/karya/pdf/{id}', [\App\Http\Controllers\CernakController::class, 'liatpdf'])->name('karya.pdf');
-Route::get('/karya/downloadpdf/{id}', [\App\Http\Controllers\CernakController::class, 'pdfdownload'])->name('karya.pdfdownload');
+
+Route::get('/cernak', [App\Http\Controllers\CernakController::class, 'index'])->name('cernak');
+Route::get('/cernak/pdf/{id}', [\App\Http\Controllers\CernakController::class, 'liatpdf'])->name('cernak.pdf');
+Route::get('/cernak/downloadpdf/{id}', [\App\Http\Controllers\CernakController::class, 'pdfdownload'])->name('cernak.pdfdownload');
+Route::get('/cernak/previewpdf/{id}', [\App\Http\Controllers\CernakController::class, 'previewpdf'])->name('cernak.previewpdf');
 
 Route::get('/komik', [\App\Http\Controllers\KomikController::class, 'index'])->name('komik');
 Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'liatpdf'])->name('komik.pdf');
