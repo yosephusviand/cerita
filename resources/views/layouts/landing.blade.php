@@ -68,7 +68,7 @@
                             alt=""></a>
                     <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/8.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/4.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('diskusi') }}" class="btn "><img src="{{ asset('img/4.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                 </div>
             </div>

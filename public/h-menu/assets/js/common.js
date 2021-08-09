@@ -3,7 +3,7 @@ $(function() {
 	skinChanger();
     initSparkline();
     CustomJs();
-    
+
     setTimeout(function() {
         $('.page-loader-wrapper').fadeOut();
     }, 50);
@@ -16,7 +16,7 @@ function initSparkline() {
 		var $this = $(this);
 		$this.sparkline('html', $this.data());
     });
-    
+
     // block-header bar chart js
     $('.bh_visitors').sparkline('html', {
         type: 'bar',
@@ -42,7 +42,7 @@ function skinChanger() {
 	$('.choose-skin li').on('click', function() {
 	    var $body = $('body');
 	    var $this = $(this);
-  
+
 	    var existTheme = $('.choose-skin li.active').data('theme');
 	    $('.choose-skin li').removeClass('active');
 	    $body.removeClass('theme-' + existTheme);
@@ -70,7 +70,7 @@ function CustomJs() {
 
 	// cwidget scroll
 	$('.cwidget-scroll').slimScroll({
-		height: '263px',
+		height: '463px',
 		wheelStep: 10,
 		touchScrollStep: 50,
 		color: '#efefef',
@@ -149,14 +149,14 @@ function CustomJs() {
 			$('.navbar-brand logo-icon.svg').attr('src', '../assets/images/logo.svg');
 		}
 	});
-	
+
 	$(".rightbar_btn").on('click',function() {
         $("#rightbar").toggleClass("open");
     });
-    
+
     // Select all checkbox
     $('.select-all').on('click',function(){
-    
+
         if(this.checked){
             $(this).parents('table').find('.checkbox-tick').each(function(){
             this.checked = true;
@@ -168,7 +168,7 @@ function CustomJs() {
         }
     });
 
-    $('.checkbox-tick').on('click',function(){   
+    $('.checkbox-tick').on('click',function(){
         if($(this).parents('table').find('.checkbox-tick:checked').length == $(this).parents('table').find('.checkbox-tick').length){
             $(this).parents('table').find('.select-all').prop('checked',true);
         }else{

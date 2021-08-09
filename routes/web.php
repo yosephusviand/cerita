@@ -33,3 +33,6 @@ Route::get('/komik', [\App\Http\Controllers\KomikController::class, 'index'])->n
 Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'liatpdf'])->name('komik.pdf');
 Route::get('/komik/downloadpdf/{id}', [\App\Http\Controllers\KomikController::class, 'pdfdownload'])->name('komik.pdfdownload');
 Route::get('/komik/previewpdf/{id}', [\App\Http\Controllers\KomikController::class, 'previewpdf'])->name('komik.previewpdf');
+
+Route::get('/diskusi', [\App\Http\Controllers\DiskusiController::class,'index'])->name('diskusi');
+Route::post('/diskusi', [\App\Http\Controllers\DiskusiController::class,'store'])->name('diskusi.store');
