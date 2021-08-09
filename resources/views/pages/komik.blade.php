@@ -4,7 +4,7 @@
         <div class="container">
             <div class="block-header">
                 <div class="row">
-                    <div class="col-lg-6 col-md-8 col-sm-12">
+                    <div class="col-6">
                         <h2>Komik</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}"><i class="icon-home"></i></a>
@@ -12,7 +12,7 @@
                             <li class="breadcrumb-item active">Komik</li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-sm-12 text-right">
+                    <div class="col-6 text-right">
                         <div class="form-group">
                             <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
                         </div>

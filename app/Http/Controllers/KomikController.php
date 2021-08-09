@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karya;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class KomikController extends Controller
 {
@@ -19,7 +20,11 @@ class KomikController extends Controller
 
         $path = storage_path('karya/' . $data->file);
 
-        return response()->file($path);
+        // return response()->file($path);
+        return Response::make(file_get_contents($path), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="'.$data->judul.'"'
+        ]);
     }
 
     public function pdfdownload($id)
