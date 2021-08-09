@@ -24,7 +24,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">POJOK MIGUNANI</a>
+            <a class="navbar-brand" href="#page-top">BAKESBANGPOL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -41,18 +41,22 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
+
+            <div class="text-right">
+                <img class="img-fluid" src="{{ asset('img/gk.png') }}" alt="alternative" width="100px">
+            </div>
             <div class="masthead-heading">POJOK MIGUNANI</div>
             <div class="masthead-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
             <div class="row">
                 <div class="form-group">
-                    <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}" style="opacity: 70%" width="200px"
-                            alt=""></a>
-                    <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}" style="opacity: 70%" width="200px"
-                            alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%" width="200px"
-                            alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%" width="200px"
-                            alt=""></a>
+                    <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}"
+                            style="opacity: 70%" width="200px" alt=""></a>
+                    <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}"
+                            style="opacity: 70%" width="200px" alt=""></a>
+                    <a href="" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%"
+                            width="200px" alt=""></a>
+                    <a href="" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%"
+                            width="200px" alt=""></a>
                 </div>
             </div>
             <br>
@@ -62,8 +66,8 @@
                             alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/2.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
-                    <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/8.png') }}" style="opacity: 70%" width="200px"
-                            alt=""></a>
+                    <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/8.png') }}"
+                            style="opacity: 70%" width="200px" alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/4.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                 </div>
