@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" href="{{ asset('img/gk.ico') }}" type="image/x-icon">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">Aduan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -45,9 +45,9 @@
             <div class="masthead-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
             <div class="row">
                 <div class="form-group">
-                    <a href="" class="btn "><img src="{{ asset('img/cernak.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/komik.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
@@ -62,7 +62,7 @@
                             alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/2.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/8.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/8.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/4.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
