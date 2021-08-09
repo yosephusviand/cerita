@@ -37,7 +37,7 @@
                                                     <a href="{{ route('komik.pdfdownload', $val->id) }}" class="btn btn-primary btn-block">Download</a>
                                                 </div>
                                                 <div class="col-6">
-                                                    <a href="{{ route('komik.pdf', $val->id) }}" class="btn btn-primary btn-block" target="_blank">Baca</a>
+                                                    <a href="{{ route('komik.previewpdf', $val->id) }}" class="btn btn-primary btn-block" target="_blank">Baca</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -29,3 +29,4 @@ Route::get('/karya/downloadpdf/{id}', [\App\Http\Controllers\CernakController::c
 Route::get('/komik', [\App\Http\Controllers\KomikController::class, 'index'])->name('komik');
 Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'liatpdf'])->name('komik.pdf');
 Route::get('/komik/downloadpdf/{id}', [\App\Http\Controllers\KomikController::class, 'pdfdownload'])->name('komik.pdfdownload');
+Route::get('/komik/previewpdf/{id}', [\App\Http\Controllers\KomikController::class, 'previewpdf'])->name('komik.previewpdf');

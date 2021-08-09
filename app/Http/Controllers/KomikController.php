@@ -20,7 +20,15 @@ class KomikController extends Controller
 
         $path = storage_path('karya/' . $data->file);
 
-        // return response()->file($path);
+        return response()->file($path);
+    }
+
+    public function previewpdf($id)
+    {
+        $data   =   Karya::find($id);
+
+        $path = storage_path('karya/' . $data->file);
+
         return Response::make(file_get_contents($path), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="'.$data->judul.'"'
