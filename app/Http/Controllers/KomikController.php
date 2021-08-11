@@ -10,7 +10,7 @@ class KomikController extends Controller
 {
     public function index()
     {
-        $data   =   Karya::where('jenis', 2)->paginate(12);
+        $data   =   Karya::where('jenis', 2)->where('status', 2)->paginate(12);
         return view('pages.komik', compact('data'));
     }
 

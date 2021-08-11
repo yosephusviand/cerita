@@ -14,7 +14,7 @@ class CernakController extends Controller
 
     public function index()
     {
-        $data   =   Karya::where('jenis', 1)->paginate(12);
+        $data   =   Karya::where('jenis', 1)->where('status', 2)->paginate(12);
         return view('pages.cernak', compact('data'));
     }
 

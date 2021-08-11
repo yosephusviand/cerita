@@ -42,12 +42,44 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Menu</a>
-                        </li>
-                    </ul>
+                    @guest
 
+                    @else
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="{{ route('home') }}" class="nav-link">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.diskusi') }}" class="nav-link">Diskusi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Informasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Piagam</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Karya
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="">
+                                        Cernak
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        Komik
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        Pictbook
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        Puisi & Pantun
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -71,8 +103,9 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

@@ -20,6 +20,7 @@ class KaryaController extends Controller
         $filefile           =   $id . '_' .  str_replace(" ", "_", $file->getClientOriginalName());
 
         $data           =   new Karya;
+        $data->nama     =   $request->nama;
         $data->judul    =   $request->judul;
         $data->jenis    =   $request->kategori;
         $data->file     =   $filefile;

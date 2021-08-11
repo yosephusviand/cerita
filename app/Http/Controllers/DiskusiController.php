@@ -9,7 +9,7 @@ class DiskusiController extends Controller
 {
     public function index()
     {
-        $data   =   Diskusi::whereIn('status', [1,2])->get();
+        $data   =   Diskusi::where('status', 1)->get();
         return view('pages.diskusi', compact('data'));
     }
 

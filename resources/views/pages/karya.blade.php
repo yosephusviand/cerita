@@ -28,6 +28,12 @@
                             <form action="{{ route('karya.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
+                                    <label for="">Nama Pengirim</label>
+                                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Tuliskan " value="" autocomplete="off">
+                                    @error("nama") <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+
+                                <div class="form-group">
                                     <label for="">Judul</label>
                                     <input type="text" name="judul" class="form-control" id="judul" placeholder="Tuliskan "
                                         value="" autocomplete="off">
