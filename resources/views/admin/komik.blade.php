@@ -5,11 +5,11 @@
         <div class="block-header">
             <div class="row">
                 <div class="col">
-                    <h2>Cernak</h2>
+                    <h2>Komik</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item active">Cernak</li>
+                        <li class="breadcrumb-item active">Komik</li>
                     </ul>
                 </div>
             </div>

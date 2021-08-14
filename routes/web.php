@@ -34,8 +34,15 @@ Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'li
 Route::get('/komik/downloadpdf/{id}', [\App\Http\Controllers\KomikController::class, 'pdfdownload'])->name('komik.pdfdownload');
 Route::get('/komik/previewpdf/{id}', [\App\Http\Controllers\KomikController::class, 'previewpdf'])->name('komik.previewpdf');
 
-Route::get('/diskusi', [\App\Http\Controllers\DiskusiController::class,'index'])->name('diskusi');
-Route::post('/diskusi', [\App\Http\Controllers\DiskusiController::class,'store'])->name('diskusi.store');
+Route::get('/pictbook', [\App\Http\Controllers\PitcbookController::class, 'index'])->name('pictbook');
+Route::get('/puisi', [\App\Http\Controllers\PuisiController::class, 'index'])->name('puisi');
+
+Route::get('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'index'])->name('diskusi');
+Route::post('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'store'])->name('diskusi.store');
+
+Route::get('/piagam', [App\Http\Controllers\PiagamController::class, 'index'])->name('piagam');
+Route::post('/piagam', [App\Http\Controllers\PiagamController::class, 'store'])->name('piagam.store');
+Route::get('generate-pdf/{id}', [App\Http\Controllers\PDFController::class, 'index'])->name('pdf');
 
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::get('/admin/diskusi', [\App\Http\Controllers\AdminController::class, 'diskusi'])->name('admin.diskusi');
@@ -59,5 +66,19 @@ Route::post('/admin/karya/nottampil', [\App\Http\Controllers\AdminKaryaControlle
 Route::get('/admin/karya/komik', [\App\Http\Controllers\AdminKaryaController::class, 'komik'])->name('admin.komik');
 Route::get('/admin/karya/tablekomik', [\App\Http\Controllers\AdminKaryaController::class, 'tablekomik'])->name('admin.tablekomik');
 
-Route::get('/admin/informasi', [\App\Http\Controllers\AdminController::class,'informasi'])->name('admin.informasi');
-Route::get('/admin/piagam', [\App\Http\Controllers\AdminController::class,'piagam'])->name('admin.piagam');
+Route::get('/admin/karya/pictbook', [\App\Http\Controllers\AdminKaryaController::class, 'pictbook'])->name('admin.pictbook');
+Route::get('/admin/karya/tablepictbook', [\App\Http\Controllers\AdminKaryaController::class, 'tablepictbook'])->name('admin.tablepictbook');
+
+Route::get('/admin/karya/puisi', [\App\Http\Controllers\AdminKaryaController::class, 'puisi'])->name('admin.puisi');
+Route::get('/admin/karya/tablepuisi', [\App\Http\Controllers\AdminKaryaController::class, 'tablepuisi'])->name('admin.tablepuisi');
+
+Route::get('/admin/informasi', [\App\Http\Controllers\AdminController::class, 'informasi'])->name('admin.informasi');
+
+Route::get('/admin/piagam', [\App\Http\Controllers\AdminController::class, 'piagam'])->name('admin.piagam');
+Route::post('/admin/piagam', [\App\Http\Controllers\AdminController::class, 'piagam_store'])->name('admin.piagamstore');
+Route::get('admin/image/{id}', [\App\Http\Controllers\AdminController::class, 'liatfoto'])->name('image.displayImage');
+Route::get('/admin/piagam/delete/{id}', [\App\Http\Controllers\AdminController::class, 'destroypiagam'])->name('admin.piagamdelete');
+Route::get('/admin/piagam/aktifkan/{id}', [\App\Http\Controllers\AdminController::class, 'piagam_aktif'])->name('admin.piagamaktif');
+Route::get('/admin/piagam/nonaktifkan/{id}', [\App\Http\Controllers\AdminController::class, 'piagam_nonaktif'])->name('admin.piagamnonaktif');
+
+Route::get('/admin/piagamanak', [\App\Http\Controllers\AdminController::class, 'piagamanak'])->name('admin.piagamanak');

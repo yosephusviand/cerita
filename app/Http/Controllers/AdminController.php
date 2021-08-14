@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diskusi;
+use App\Models\Piagam;
+use App\Models\Piagam_mas;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 
 class AdminController extends Controller
 {
@@ -67,20 +71,20 @@ class AdminController extends Controller
     {
         if ($request->idedit == '') {
 
-			$data			=	new User;
-			$data->name		=	$request->nama;
-			$data->email	=	$request->email;
-			$data->password	=	Hash::make($request->password);
-			$data->save();
-		} else {
-			$edit			=	User::find($request->idedit);
-			$edit->name		=	$request->nama;
-			$edit->email	=	$request->email;
-			$edit->password	=	Hash::make($request->password);
-			$edit->save();
-		}
+            $data            =    new User;
+            $data->name        =    $request->nama;
+            $data->email    =    $request->email;
+            $data->password    =    Hash::make($request->password);
+            $data->save();
+        } else {
+            $edit            =    User::find($request->idedit);
+            $edit->name        =    $request->nama;
+            $edit->email    =    $request->email;
+            $edit->password    =    Hash::make($request->password);
+            $edit->save();
+        }
 
-		return back()->with('status', 1)->with('message', 'Berhasil Simpan Data');
+        return back()->with('status', 1)->with('message', 'Berhasil Simpan Data');
     }
 
     public function akunedit(Request $request)
@@ -103,6 +107,88 @@ class AdminController extends Controller
 
     public function piagam()
     {
-        return view('admin.piagam');
+        $data   =   Piagam_mas::all();
+        return view('admin.piagam', compact('data'));
+    }
+
+    public function piagam_store(Request $request)
+    {
+        if ($request->hasFile('file')) {
+            $file               =   $request->file('file');
+            $id                 =   date('Ymd');
+            $filefile           =   $id . '_' .  str_replace(" ", "_", $file->getClientOriginalName());
+
+            $data           =   new Piagam_mas;
+            $data->nama     =   $request->nama;
+            $data->foto     =   $filefile;
+            $data->status    =   1;
+            $data->save();
+
+            if ($data) {
+                $tujuan_upload = storage_path('piagam');
+                $file->move($tujuan_upload, $filefile);
+            }
+        } else {
+            $data           =   new Piagam_mas;
+            $data->nama     =   $request->nama;
+            $data->status    =   1;
+            $data->save();
+        }
+        return back()->with('status', 1)->with('message', 'Berhasil Simpan');
+    }
+
+    public function liatfoto($id)
+    {
+        $data   =   Piagam_mas::find($id);
+
+        $path = storage_path('piagam/' . $data->foto);
+
+        $file = File::get($path);
+
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+
+        $response->header("Content-Type", $type);
+
+        return $response;
+    }
+
+    public function destroypiagam($id)
+    {
+        $data   =   Piagam_mas::find($id);
+        $data->save();
+    }
+
+    public function piagam_aktif($id)
+    {
+        $data            =   Piagam_mas::find($id);
+        $data->status    =   2;
+        $data->save();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Diaktifkan');
+    }
+
+    public function piagam_nonaktif($id)
+    {
+        $data            =   Piagam_mas::find($id);
+        $data->status    =   1;
+        $data->save();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Non Aktifkan');
+    }
+
+    public function piagamanak()
+    {
+        $data   =   Piagam::all();
+        return view('admin.piagamanak', compact('data'));
+    }
+
+    public function destroyanak($id)
+    {
+        $data   =   Piagam::find($id);
+        $data->delete();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Hapus Data');
     }
 }

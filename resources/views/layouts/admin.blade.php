@@ -202,17 +202,21 @@
                                 <ul class="dropdown-menu animated bounceIn">
                                     <li><a href="{{ route('admin.cernak') }}">Cernak</a></li>
                                     <li><a href="{{ route('admin.komik') }}">Komik</a></li>
-                                    <li><a href="">Pitcbook</a></li>
-                                    <li><a href="">Pusisi & Pantun</a></li>
+                                    <li><a href="{{ route('admin.pictbook') }}">Pitcbook</a></li>
+                                    <li><a href="{{ route('admin.puisi') }}">Pusisi & Pantun</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown {{ request()->is('admin/informasi*') ? 'active' : '' }}"><a
                                     href="{{ route('admin.informasi') }}" class="nav-link"><i
                                         class="icon-film"></i>Informasi</a>
                             </li>
-                            <li class="nav-item dropdown {{ request()->is('admin/piagam*') ? 'active' : '' }}"><a
-                                    href="{{ route('admin.piagam') }}" class="nav-link"><i
-                                        class="icon-badge"></i>Piagam</a>
+                            <li class="nav-item dropdown {{ request()->is('admin/piagam*') ? 'active' : '' }}">
+                                <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown"><i
+                                        class="icon-badge"></i> <span>Karya</span></a>
+                                <ul class="dropdown-menu animated bounceIn">
+                                    <li><a href="{{ route('admin.piagam') }}">Kelola</a></li>
+                                    <li><a href="{{ route('admin.piagamanak') }}">Piagam Anak</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item dropdown {{ request()->is('admin/akun*') ? 'active' : '' }}"><a
                                     href="{{ route('admin.akun') }}" class="nav-link"><i
@@ -346,6 +350,8 @@
 
         $('#tablecernak').load("{{ route('admin.tablecernak') }}");
         $('#tablekomik').load("{{ route('admin.tablekomik') }}");
+        $('#tablepictbook').load("{{ route('admin.tablepictbook') }}");
+        $('#tablepuisi').load("{{ route('admin.tablepuisi') }}");
     </script>
     <script>
         function showNotif(text) {

@@ -53,16 +53,16 @@
                             style="opacity: 70%" width="200px" alt=""></a>
                     <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%"
+                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%"
+                    <a href="{{ route('puisi') }}" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="form-group">
-                    <a href="" class="btn "><img src="{{ asset('img/3.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('piagam') }}" class="btn "><img src="{{ asset('img/3.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                     <a href="" class="btn "><img src="{{ asset('img/2.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>

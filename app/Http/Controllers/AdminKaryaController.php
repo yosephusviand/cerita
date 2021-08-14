@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Karya;
+use App\Models\Piagam;
 use Illuminate\Http\Request;
 
 class AdminKaryaController extends Controller
@@ -21,13 +22,37 @@ class AdminKaryaController extends Controller
 
     public function komik()
     {
-
-        return view('admin.komik');
+        $data   =   Karya::where('jenis', 2)->get();
+        return view('admin.komik', compact('data'));
     }
 
     public function tablekomik()
     {
         $data   =   Karya::where('jenis', 2)->get();
+        return view('admin.tablecernak', compact('data'));
+    }
+
+    public function pictbook()
+    {
+        $data   =   Karya::where('jenis', 3)->get();
+        return view('admin.pictbook', compact('data'));
+    }
+
+    public function tablepictbook()
+    {
+        $data   =   Karya::where('jenis', 3)->get();
+        return view('admin.tablecernak', compact('data'));
+    }
+
+    public function puisi()
+    {
+        $data   =   Karya::where('jenis', 4)->get();
+        return view('admin.puisi', compact('data'));
+    }
+
+    public function tablepuisi()
+    {
+        $data   =   Karya::where('jenis', 4)->get();
         return view('admin.tablecernak', compact('data'));
     }
 
@@ -37,6 +62,12 @@ class AdminKaryaController extends Controller
         $data->status   =   2;
         $data->save();
 
+        if ($data) {
+            $piagam         =   new Piagam;
+            $piagam->nama   =   $data->nama;
+            $piagam->jenis  =   2;
+            $piagam->save();
+        }
     }
 
     public function karyatidaktampil(Request $request)
