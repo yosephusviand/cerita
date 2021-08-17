@@ -93,7 +93,7 @@
                                                         <a href="{{ route('admin.karyatidaktampil', $val->id) }}"
                                                             class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
                                                     @endif
-                                                    <button type="button" class="btn btn-primary btn-sm editkaryacernak"
+                                                    <button type="button" class="btn btn-primary btn-sm editkaryacernak" id="editkaryacernak"
                                                         data-id="{{ $val->id }}"><i class="fa fa-pencil"></i></button>
                                                     <a href="{{ route('admin.karyadestroy', $val->id) }}"
                                                         class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
