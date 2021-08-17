@@ -1,6 +1,6 @@
 <div class="card">
     <div class="header">
-        <h2>Data Akun </h2>
+
         <div class="table-responsive">
             <table class="table table-hover js-basic-example dataTable table-custom table-bordered table-sm">
                 <thead>
@@ -28,11 +28,11 @@
                             <td>{{ $val->status_name }}</td>
                             <td>
                                 @if ($val->status == 1)
-                                    <button type="submit" class="btn btn-warning btn-sm tampilkan"
-                                        data-id="{{ $val->id }}"><i class="fa fa-eye"></i></button>
+                                    <a href="{{ route('admin.karyatampil', $val->id) }}"
+                                        class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
                                 @else
-                                    <button type="submit" class="btn btn-info btn-sm nottampil"
-                                        data-id="{{ $val->id }}"><i class="fa fa-eye"></i></button>
+                                    <a href="{{ route('admin.karyatidaktampil') }}" class="btn btn-info btn-sm"><i
+                                            class="fa fa-eye"></i></a>
                                 @endif
                                 <button type="button" class="btn btn-primary btn-sm editkarya"
                                     data-id="{{ $val->id }}"><i class="fa fa-pencil"></i></button>
@@ -49,76 +49,4 @@
 </div>
 
 
-<script>
-    $('.editkarya').click(function() {
-        var id = $(this).data('id');
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: "{{ route('admin.karyaedit') }}",
-            method: "POST",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                $('[name="idedit"]').val(data.id);
-                $('[name="nama"]').val(data.nama);
-                $('[name="judul"]').val(data.judul);
-                $('[name="kategori"]').val(data.jenis);
-            }
-        });
-    });
-
-    $('.tampilkan').click(function() {
-        var id = $(this).data('id');
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: "{{ route('admin.karyatampil') }}",
-            method: "POST",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                showNotif('Berhasil Di Tampilakan');
-                $('#tablecernak').load("{{ route('admin.tablecernak') }}");
-                $('#tablekomik').load("{{ route('admin.tablekomik') }}");
-            }
-        });
-
-    });
-
-    $('.nottampil').click(function() {
-        var id = $(this).data('id');
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            url: "{{ route('admin.karyatidaktampil') }}",
-            method: "POST",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                showNotif('Tidak Di Tampilakan');
-                $('#tablecernak').load("{{ route('admin.tablecernak') }}");
-                $('#tablekomik').load("{{ route('admin.tablekomik') }}");
-            }
-        });
-
-    });
-</script>

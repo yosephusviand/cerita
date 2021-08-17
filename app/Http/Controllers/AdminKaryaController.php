@@ -10,8 +10,8 @@ class AdminKaryaController extends Controller
 {
     public function cernak()
     {
-
-        return view('admin.cernak');
+        $data   =   Karya::where('jenis', 1)->get();
+        return view('admin.cernak', compact('data'));
     }
 
     public function tablecernak()
@@ -56,9 +56,9 @@ class AdminKaryaController extends Controller
         return view('admin.tablecernak', compact('data'));
     }
 
-    public function karyatampil(Request $request)
+    public function karyatampil(Request $request, $id)
     {
-        $data           =   Karya::find($request->id);
+        $data           =   Karya::find($id);
         $data->status   =   2;
         $data->save();
 
@@ -68,14 +68,16 @@ class AdminKaryaController extends Controller
             $piagam->jenis  =   2;
             $piagam->save();
         }
+        return back()->with('status', 1)->with('message', 'Data Di Aktifkan');
     }
 
-    public function karyatidaktampil(Request $request)
+    public function karyatidaktampil(Request $request, $id)
     {
-        $data           =   Karya::find($request->id);
+        $data           =   Karya::find($id);
         $data->status   =   1;
         $data->save();
 
+        return back()->with('status', 1)->with('message', 'Data Non Aktifkan');
     }
 
     public function karyastore(Request $request)
@@ -127,12 +129,19 @@ class AdminKaryaController extends Controller
         }
 
         return back()->with('status', 1)->with('message', 'Berhasil Simpan');
-
     }
 
     public function edit(Request $request)
     {
-        return Karya::find($request->id);
+        $data   =   Karya::find($request->id);
+
+        $array  =   [
+            'id'    => $data->id,
+            'nama'  => $data->nama,
+            'judul' => $data->judul,
+        ];
+
+        return $array ;
     }
 
     public function karyadestroy($id)

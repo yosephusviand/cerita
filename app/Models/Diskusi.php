@@ -15,7 +15,7 @@ class Diskusi extends Model
     public function getStatusNameAttribute()
     {
         if ($this->status == '1') {
-            echo ' <span class="badge badge-primary">Tampil</span>';
+            echo ' <span class="badge badge-warning">Tampil</span>';
         } else {
             echo ' <span class="badge badge-danger">Tidak Tampil</span>';
         }

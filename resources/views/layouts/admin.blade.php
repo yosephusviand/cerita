@@ -263,8 +263,51 @@
 
     <script src="{{ asset('h-menu') }}/assets/js/pages/tables/jquery-datatable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).off('.datepicker.data-api');
+        // $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+
+
+        });
+    </script>
+
+    @yield('js')
 
     <script>
+        $('.editakun').click(function() {
+            var id = $(this).data('id');
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: "{{ route('akun.edit') }}",
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    $('[name="idedit"]').val(data.id);
+                    $('[name="nama"]').val(data.name);
+                    $('[name="email"]').val(data.email);
+                }
+            });
+        });
+
         $('.hilangkan').click(function() {
             var id = $(this).data('id');
             var key = $(this).data('key');
@@ -336,23 +379,31 @@
         });
 
 
-    </script>
-    <script>
-        $(document).off('.datepicker.data-api');
-        // $.fn.datepicker.defaults.format = "dd/mm/yyyy";
-        $('.datepicker').datepicker({
-            format: 'yyyy-mm-dd'
-        });
+        $('#editkarya').click(function() {
+            var id = $(this).data('id');
 
-        $(document).ready(function() {
-            $('.select2').select2();
-        });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
-        $('#tablecernak').load("{{ route('admin.tablecernak') }}");
-        $('#tablekomik').load("{{ route('admin.tablekomik') }}");
-        $('#tablepictbook').load("{{ route('admin.tablepictbook') }}");
-        $('#tablepuisi').load("{{ route('admin.tablepuisi') }}");
+            $.ajax({
+                url: "{{ route('admin.karyaedit') }}",
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('[name="idedit"]').val(data.id);
+                    $('[name="nama"]').val(data.nama);
+                    $('[name="judul"]').val(data.judul);
+                }
+            });
+        });
     </script>
+
     <script>
         function showNotif(text) {
 
@@ -361,7 +412,6 @@
 
             setTimeout(function() {
                 $('#topbar-notification').fadeOut();
-                window.location.reload();
             }, 2000)
         }
 
@@ -377,130 +427,6 @@
     </script>
 
 
-    <script>
-        $(document).ready(function() {
-
-            $('#myBtn').click(function() {
-                var id = $(this).data('id');
-                var user = $(this).data('user');
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                if (user == 'admin') {
-                    var form = $(
-                        '<form action="{{ route('logout') }}" method="post">' +
-                        '@csrf</form>'
-                    );
-                    $('body').append(form);
-                    form.submit();
-                } else {
-
-                    $.ajax({
-
-                        method: "POST",
-                        data: {
-                            id: id
-                        },
-                        success: function(data) {
-                            if (data == '') {
-                                $('[name="id"]').val(id);
-                                $('#mymodal').modal();
-                            } else {
-                                var form = $(
-                                    '<form action="{{ route('logout') }}" method="post">' +
-                                    '@csrf</form>'
-                                );
-                                $('body').append(form);
-                                form.submit();
-                            }
-                        }
-                    });
-                }
-
-            });
-
-            $('.simpansurvei').click(function() {
-                var id = $('#id').val();
-                var survei = $('.jenis:checked').val();
-                var catatan = $('#catatan').val();
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-
-                    method: "POST",
-                    data: {
-                        id: id,
-                        survei: survei,
-                        catatan: catatan,
-                    },
-                    success: function(data) {
-                        var form = $(
-                            '<form action="{{ route('logout') }}" method="post">' +
-                            '@csrf</form>'
-                        );
-                        $('body').append(form);
-                        form.submit();
-                    }
-                })
-            })
-
-            $(document).on('click', '.editakun', function() {
-                var id = $(this).data('id');
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-                    url: "{{ route('akun.edit') }}",
-                    method: "POST",
-                    data: {
-                        id: id
-                    },
-                    success: function(data) {
-                        $('[name="idedit"]').val(data.id);
-                        $('[name="nama"]').val(data.name);
-                        $('[name="email"]').val(data.email);
-                    }
-                });
-            });
-
-        });
-
-        $(document).on('click', '.editkegiatan', function() {
-            var id = $(this).data('id');
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-
-                method: "POST",
-                data: {
-                    id: id
-                },
-                success: function(data) {
-                    $('[name="idedit"]').val(data.id);
-                    $('[name="hari"]').val(data.hari);
-                    $('[name="tanggal"]').val(data.tanggal);
-                    $('[name="lokasi"]').val(data.lokasi);
-                    $('[name="uraian"]').val(data.uraian);
-                }
-            });
-        });
-    </script>
 
     @if (!empty(Session::get('status')) && Session::get('status') == '1')
         <script>

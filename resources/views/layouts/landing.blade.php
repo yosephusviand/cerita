@@ -64,7 +64,7 @@
                 <div class="form-group">
                     <a href="{{ route('piagam') }}" class="btn "><img src="{{ asset('img/3.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
-                    <a href="" class="btn "><img src="{{ asset('img/2.png') }}" style="opacity: 70%" width="200px"
+                    <a href="{{ route('informasi') }}" class="btn "><img src="{{ asset('img/2.png') }}" style="opacity: 70%" width="200px"
                             alt=""></a>
                     <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/8.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>

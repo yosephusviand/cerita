@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diskusi;
+use App\Models\Informasi;
 use App\Models\Piagam;
 use App\Models\Piagam_mas;
 use App\Models\User;
@@ -102,7 +103,9 @@ class AdminController extends Controller
 
     public function informasi()
     {
-        return view('admin.informasi');
+        $data   =   Informasi::all();
+
+        return view('admin.informasi', compact('data'));
     }
 
     public function piagam()
@@ -154,10 +157,29 @@ class AdminController extends Controller
         return $response;
     }
 
+    public function liatinfo($id)
+    {
+        $data   =   Informasi::find($id);
+
+        $path = storage_path('informasi/' . $data->foto);
+
+        $file = File::get($path);
+
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+
+        $response->header("Content-Type", $type);
+
+        return $response;
+    }
+
     public function destroypiagam($id)
     {
         $data   =   Piagam_mas::find($id);
-        $data->save();
+        $data->delete();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Dihapus');
     }
 
     public function piagam_aktif($id)
@@ -190,5 +212,85 @@ class AdminController extends Controller
         $data->delete();
 
         return back()->with('status', 1)->with('message', 'Berhasil Hapus Data');
+    }
+
+    public function informasi_store(Request $request)
+    {
+        if ($request->hasFile('file')) {
+            $file               =   $request->file('file');
+            $id                 =   date('Ymd');
+            $filefile           =   $id . '_' .  str_replace(" ", "_", $file->getClientOriginalName());
+
+            if ($request->idedit == '') {
+                $data           =   new Informasi;
+                $data->nama     =   $request->nama;
+                $data->tanggal  =   $request->tanggal;
+                $data->foto     =   $filefile;
+                $data->save();
+                if ($data) {
+                    $tujuan_upload = storage_path('informasi');
+                    $file->move($tujuan_upload, $filefile);
+                }
+            } else {
+                $data           =   Informasi::find($request->idedit);
+                $data->nama     =   $request->nama;
+                $data->tanggal  =   $request->tanggal;
+                $data->foto     =   $filefile;
+                $data->save();
+                if ($data) {
+                    $tujuan_upload = storage_path('informasi');
+                    $file->move($tujuan_upload, $filefile);
+                }
+            }
+        } else {
+            if ($request->idedit == '') {
+                $data           =   new Informasi;
+                $data->nama     =   $request->nama;
+                $data->tanggal  =   $request->tanggal;
+                $data->save();
+            } else {
+                $data           =   Informasi::find($request->idedit);
+                $data->nama     =   $request->nama;
+                $data->tanggal  =   $request->tanggal;
+                $data->save();
+            }
+        }
+
+        return back()->with('status', 1)->with('message', 'Berhasil Simpan');
+    }
+
+    public function destroyinformasi($id)
+    {
+        $data   =   Informasi::find($id);
+        $data->delete();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Hapus Data');
+    }
+
+    public function informasi_aktif($id)
+    {
+        $data           =   Informasi::find($id);
+        $data->status   =   2;
+        $data->save();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Di Aktifkan');
+    }
+
+    public function informasi_nonaktif($id)
+    {
+        $data           =   Informasi::find($id);
+        $data->status   =   1;
+        $data->save();
+
+        return back()->with('status', 1)->with('message', 'Berhasil Non Aktifkan');
+    }
+
+    public function informasiedit(Request $request)
+    {
+        $data   =   Informasi::find($request->id);
+
+        $arr    =   ['id' => $data->id, 'nama' => $data->nama, 'tanggal' => $data->tanggal];
+
+        return $arr;
     }
 }

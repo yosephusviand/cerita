@@ -41,16 +41,19 @@
                                                             @if ($val->status == 2)
                                                                 <div class="col-1 pl-1 text-right"><i
                                                                         class="fa fa-eye ml-2 hilangkan text-warning"
-                                                                        data-id="{{ $val->id }}" data-key="munculkan"></i>
+                                                                        data-id="{{ $val->id }}"
+                                                                        data-key="munculkan"></i>
                                                                 </div>
                                                             @else
                                                                 <div class="col-1 pl-1 text-right"><i
                                                                         class="fa fa-eye-slash ml-2 munculkan text-primary"
-                                                                        data-id="{{ $val->id }}" data-key="hilangkan"></i>
+                                                                        data-id="{{ $val->id }}"
+                                                                        data-key="hilangkan"></i>
                                                                 </div>
                                                             @endif
                                                             <div class="col-1 pl-1 text-left"><i
-                                                                    class="fa fa-trash ml-2 hapusdiskusi text-danger" data-id="{{ $val->id }}"></i>
+                                                                    class="fa fa-trash ml-2 hapusdiskusi text-danger"
+                                                                    data-id="{{ $val->id }}"></i>
                                                             </div>
                                                         </div>
 
@@ -62,8 +65,31 @@
                                                     <img src="{{ asset('img/profilee.png') }}" class="rounded-circle"
                                                         alt="">
                                                     <div class="chat-info">
-                                                        <label for="">{{ $val->created_at }} /
-                                                            {{ $val->email }}</label>
+                                                        <div class="row">
+                                                            @if ($val->status == 2)
+                                                                <div class="col-1 pl-1 text-right"><i
+                                                                        class="fa fa-eye ml-2 hilangkan text-warning"
+                                                                        data-id="{{ $val->id }}"
+                                                                        data-key="munculkan"></i>
+                                                                </div>
+                                                            @else
+                                                                <div class="col-1 pl-1 text-right"><i
+                                                                        class="fa fa-eye-slash ml-2 munculkan text-default"
+                                                                        data-id="{{ $val->id }}"
+                                                                        data-key="hilangkan"></i>
+                                                                </div>
+                                                            @endif
+                                                            <div class="col-1 pl-1 text-left"><i
+                                                                    class="fa fa-trash ml-2 hapusdiskusi text-danger"
+                                                                    data-id="{{ $val->id }}"></i>
+                                                            </div>
+                                                            <div class="col-10">
+                                                                {{ $val->status_name }}
+                                                                <label for="">{{ $val->created_at }} /
+                                                                    {{ $val->email }}</label>
+                                                            </div>
+
+                                                        </div>
                                                         <span class="message">{{ $val->diskusi }}</span>
                                                     </div>
                                                 </li>
