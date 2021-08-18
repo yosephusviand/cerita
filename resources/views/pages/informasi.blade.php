@@ -23,7 +23,7 @@
 
             <div class="row clearfix">
                 @foreach ($data as $val)
-                    <div class="col-lg-4 col-md-12">
+                    <div class="col-lg-6 col-md-12">
                         <div class="card project_widget">
                             <div class="pw_img">
                                 <img class="img-fluid" width="100%" src="{{ route('image.informasi', $val->id) }}" alt="About the image">
