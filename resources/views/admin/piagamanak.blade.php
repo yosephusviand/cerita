@@ -37,7 +37,7 @@
                                             <td>{{ $val->jenisnya }}</td>
                                             <td>
                                                 <a href="{{ route('pdf', $val->id) }}" class="btn btn-primary" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
-                                                <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="{{ route('admin.piagamanakdelete', $val->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

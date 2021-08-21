@@ -92,4 +92,5 @@ Route::get('/admin/piagam/aktifkan/{id}', [\App\Http\Controllers\AdminController
 Route::get('/admin/piagam/nonaktifkan/{id}', [\App\Http\Controllers\AdminController::class, 'piagam_nonaktif'])->name('admin.piagamnonaktif');
 
 Route::get('/admin/piagamanak', [\App\Http\Controllers\AdminController::class, 'piagamanak'])->name('admin.piagamanak');
+Route::get('/admin/piagamanak/delete/{id}', [\App\Http\Controllers\AdminController::class, 'destroyanak'])->name('admin.piagamanakdelete');
 
