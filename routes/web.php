@@ -45,7 +45,8 @@ Route::get('/informasi/image/{id}', [\App\Http\Controllers\InformasiController::
 
 Route::get('/piagam', [App\Http\Controllers\PiagamController::class, 'index'])->name('piagam');
 Route::post('/piagam', [App\Http\Controllers\PiagamController::class, 'store'])->name('piagam.store');
-Route::get('generate-pdf/{id}', [App\Http\Controllers\PDFController::class, 'index'])->name('pdf');
+Route::get('/generate-pdf/{id}', [App\Http\Controllers\PDFController::class, 'index'])->name('pdf');
+Route::get('/piagam/gambar{id}', [App\Http\Controllers\PDFController::class, 'liatfoto'])->name('pdf.liatfoto');
 
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::get('/admin/diskusi', [\App\Http\Controllers\AdminController::class, 'diskusi'])->name('admin.diskusi');

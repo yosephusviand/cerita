@@ -53,7 +53,7 @@
                             style="opacity: 70%" width="200px" alt=""></a>
                     <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>
-                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pitcbook.png') }}" style="opacity: 70%"
+                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pictbook.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>
                     <a href="{{ route('puisi') }}" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>

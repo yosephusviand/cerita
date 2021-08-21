@@ -25,13 +25,25 @@
                                 <div class="form-group">
                                     <label for="nama">Nama Pengirim</label>
                                     <input type="text" name="nama" class="form-control" id="nama" placeholder="Tuliskan "
-                                        value="" autocomplete="off">
+                                        value="" autocomplete="off" required>
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" id="alamat"
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
+                                    @error('alamat') <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="">No HP</label>
+                                    <input type="number" name="notelp" class="form-control" id="notelp"
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
+                                    @error('notelp') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="">Judul</label>
                                     <input type="text" name="judul" class="form-control" id="judul" placeholder="Tuliskan "
-                                        value="" autocomplete="off">
+                                        value="" autocomplete="off" required>
                                     @error('judul') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 
@@ -65,6 +77,8 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Alamat</th>
+                                            <th>No HP</th>
                                             <th>Judul</th>
                                             <th>Download/Baca</th>
                                             <th>Status</th>
@@ -76,6 +90,8 @@
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $val->nama }}</td>
+                                                <td></td>
+                                                <td></td>
                                                 <td>{{ $val->judul }}</td>
                                                 <td>
                                                     <a href="{{ route('cernak.pdfdownload', $val->id) }}"
@@ -135,6 +151,8 @@
                     console.log(data);
                     $('[name="idedit"]').val(data.id);
                     $('[name="nama"]').val(data.nama);
+                    $('[name="alamat"]').val(data.alamat);
+                    $('[name="nohp"]').val(data.nohp);
                     $('[name="judul"]').val(data.judul);
                 }
             });

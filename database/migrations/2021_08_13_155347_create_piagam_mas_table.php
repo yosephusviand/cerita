@@ -15,7 +15,10 @@ class CreatePiagamMasTable extends Migration
     {
         Schema::create('piagam_mas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama')->nullable();
+            $table->string('jabatan')->nullable();
             $table->string('foto')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

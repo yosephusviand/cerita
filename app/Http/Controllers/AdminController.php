@@ -73,15 +73,15 @@ class AdminController extends Controller
         if ($request->idedit == '') {
 
             $data            =    new User;
-            $data->name        =    $request->nama;
-            $data->email    =    $request->email;
-            $data->password    =    Hash::make($request->password);
+            $data->name      =    $request->nama;
+            $data->email     =    $request->email;
+            $data->password  =    Hash::make($request->password);
             $data->save();
         } else {
             $edit            =    User::find($request->idedit);
-            $edit->name        =    $request->nama;
-            $edit->email    =    $request->email;
-            $edit->password    =    Hash::make($request->password);
+            $edit->name      =    $request->nama;
+            $edit->email     =    $request->email;
+            $edit->password  =    Hash::make($request->password);
             $edit->save();
         }
 
@@ -123,6 +123,7 @@ class AdminController extends Controller
 
             $data           =   new Piagam_mas;
             $data->nama     =   $request->nama;
+            $data->jabatan  =   $request->jabatan;
             $data->foto     =   $filefile;
             $data->status    =   1;
             $data->save();
@@ -134,6 +135,7 @@ class AdminController extends Controller
         } else {
             $data           =   new Piagam_mas;
             $data->nama     =   $request->nama;
+            $data->jabatan  =   $request->jabatan;
             $data->status    =   1;
             $data->save();
         }

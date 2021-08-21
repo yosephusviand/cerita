@@ -90,6 +90,8 @@ class AdminKaryaController extends Controller
             if ($request->idedit == '') {
                 $data           =   new Karya;
                 $data->nama     =   $request->nama;
+                $data->alamat   =   $request->alamat;
+                $data->nohp     =   $request->nohp;
                 $data->judul    =   $request->judul;
                 $data->jenis    =   $request->kategori;
                 $data->file     =   $filefile;
@@ -102,6 +104,8 @@ class AdminKaryaController extends Controller
             } else {
                 $data       =   Karya::find($request->idedit);
                 $data->nama     =   $request->nama;
+                $data->alamat   =   $request->alamat;
+                $data->nohp     =   $request->nohp;
                 $data->judul    =   $request->judul;
                 $data->jenis    =   $request->kategori;
                 $data->file     =   $filefile;
@@ -116,12 +120,16 @@ class AdminKaryaController extends Controller
             if ($request->idedit == '') {
                 $data           =   new Karya;
                 $data->nama     =   $request->nama;
+                $data->alamat   =   $request->alamat;
+                $data->nohp     =   $request->nohp;
                 $data->judul    =   $request->judul;
                 $data->jenis    =   $request->kategori;
                 $data->save();
             } else {
                 $data       =   Karya::find($request->idedit);
                 $data->nama     =   $request->nama;
+                $data->alamat   =   $request->alamat;
+                $data->nohp     =   $request->nohp;
                 $data->judul    =   $request->judul;
                 $data->jenis    =   $request->kategori;
                 $data->save();
@@ -138,6 +146,8 @@ class AdminKaryaController extends Controller
         $array  =   [
             'id'    => $data->id,
             'nama'  => $data->nama,
+            'alamat'=>   $request->alamat,
+            'nohp'  =>   $request->nohp,
             'judul' => $data->judul,
         ];
 

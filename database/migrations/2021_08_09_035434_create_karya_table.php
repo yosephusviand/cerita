@@ -16,6 +16,8 @@ class CreateKaryaTable extends Migration
         Schema::create('karya', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('nohp')->nullable();
             $table->string('judul')->nullable();
             $table->integer('jenis')->nullable();
             $table->string('file')->nullable();

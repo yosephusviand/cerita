@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         .bc {
-            background-image: url('img/bcup.png');
+            background-image: url('img/bcfix.png');
         }
 
     </style>

@@ -25,9 +25,16 @@
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="nama" class="form-control" id="nama" placeholder="Tuliskan "
-                                        value="" autocomplete="off">
+                                        value="" autocomplete="off" required>
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Jabatan</label>
+                                    <input type="text" name="jabatan" class="form-control" id="jabatan"
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
+                                    @error('jabatan') <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+
                                 <label for="">Upload File</label>
                                 <div class="form-group shadow">
                                     <input type="file" name="file" class="dropify"
@@ -42,38 +49,44 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="card">
                         <div class="header">
-                            <table class="table table-sm table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>File</th>
-                                        <th>Status</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($data as $i => $val)
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            <td>{{ $val->nama }}</td>
-                                            <td> <img src="{{ route('image.displayImage', $val->id) }}" alt="" title=""
-                                                    width="100px">
-                                            </td>
-                                            <td>{{ $val->status_now }}</td>
-                                            <td>
-                                                @if ($val->status == 1)
-                                                    <a href="{{ route('admin.piagamaktif', $val->id) }}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                                                @else
-                                                    <a href="{{ route('admin.piagamnonaktif', $val->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
-                                                @endif
-                                                <a href="{{ route('admin.piagamdelete', $val->id) }}"
-                                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Jabatan</th>
+                                            <th>File</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data as $i => $val)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
+                                                <td>{{ $val->nama }}</td>
+                                                <td>{{ $val->jabatan }}</td>
+                                                <td> <img src="{{ route('image.displayImage', $val->id) }}" alt=""
+                                                        title="" width="100px">
+                                                </td>
+                                                <td>{{ $val->status_now }}</td>
+                                                <td>
+                                                    @if ($val->status == 1)
+                                                        <a href="{{ route('admin.piagamaktif', $val->id) }}"
+                                                            class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                                    @else
+                                                        <a href="{{ route('admin.piagamnonaktif', $val->id) }}"
+                                                            class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
+                                                    @endif
+                                                    <a href="{{ route('admin.piagamdelete', $val->id) }}"
+                                                        class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

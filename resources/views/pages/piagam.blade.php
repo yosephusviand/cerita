@@ -33,6 +33,19 @@
                                         value="" autocomplete="off">
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" id="alamat"
+                                        placeholder="Tuliskan " value="" autocomplete="off">
+                                    @error('alamat') <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="">No Telp</label>
+                                    <input type="number" name="nohp" class="form-control" id="nohp" placeholder="Tuliskan "
+                                        value="" autocomplete="off">
+                                    @error('nohp') <div class="small text-danger">{{ message }}</div> @enderror
+                                </div>
+
                                 <input type="submit" value="Simpan" class="btn btn-primary">
                             </form>
                         </div>
@@ -60,7 +73,8 @@
                                                 <td>{{ $val->nama }}</td>
                                                 <td>{{ $val->jenisnya }}</td>
                                                 <td>
-                                                    <a href="{{ route('pdf', $val->id) }}" class="btn btn-primary" target="_blank">Cetak</a>
+                                                    <a href="{{ route('pdf', $val->id) }}" class="btn btn-primary"
+                                                        target="_blank">Cetak</a>
                                                 </td>
                                             </tr>
                                         @endforeach

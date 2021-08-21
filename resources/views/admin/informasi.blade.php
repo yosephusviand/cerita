@@ -26,13 +26,13 @@
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="nama" class="form-control" id="nama" placeholder="Tuliskan "
-                                        value="" autocomplete="off">
+                                        value="" autocomplete="off" required>
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="">Tanggal Pelaksanaan</label>
                                     <input type="date" name="tanggal" class="form-control" id="tanggal"
-                                        placeholder="Tuliskan " value="" autocomplete="off">
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
                                     @error('tanggal') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 

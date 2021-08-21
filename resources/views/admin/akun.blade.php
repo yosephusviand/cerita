@@ -25,21 +25,21 @@
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="nama" class="form-control" id="nama"
-                                        placeholder="Tuliskan " value="" autocomplete="off">
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Tuliskan "
-                                        value="" autocomplete="off">
+                                        value="" autocomplete="off" required>
                                     @error('email') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" id="password"
-                                        placeholder="Tuliskan " value="" autocomplete="off">
+                                        placeholder="Tuliskan " value="" autocomplete="off" required>
                                     @error('password') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 

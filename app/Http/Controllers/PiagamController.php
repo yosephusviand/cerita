@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Piagam;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PiagamController extends Controller
@@ -20,6 +21,10 @@ class PiagamController extends Controller
     {
         $data           =   new Piagam;
         $data->nama     =   strtoupper($request->nama);
+        $data->alamat   =   strtoupper($request->alamat);
+        $data->nohp     =   $request->nohp;
+        $data->tanggal  =   Carbon::now();
+        $data->nosurat  =   Piagam::nosurat();
         $data->jenis    =   1;
         $data->save();
 
