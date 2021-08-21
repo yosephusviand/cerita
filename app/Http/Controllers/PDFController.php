@@ -22,7 +22,7 @@ class PDFController extends Controller
         $qrcode = base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate(url('generate-pdf/'.$data->id)));
         $pdf    = PDF::loadView('pages.pdf', compact('data', 'qrcode', 'ttd','path'))->setPaper('a4', 'landscape');
 
-        return $pdf->stream('data.pdf');
+        return $pdf->stream($data->nama.'.pdf');
     }
 
 }
