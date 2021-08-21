@@ -146,8 +146,8 @@ class AdminKaryaController extends Controller
         $array  =   [
             'id'    => $data->id,
             'nama'  => $data->nama,
-            'alamat'=>   $request->alamat,
-            'nohp'  =>   $request->nohp,
+            'alamat'=> $data->alamat,
+            'nohp'  => $data->nohp,
             'judul' => $data->judul,
         ];
 
