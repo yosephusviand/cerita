@@ -13,8 +13,7 @@
                             <li class="breadcrumb-item active">Layanan Aduan</li>
                         </ul>
                     </div>
-                    <div class="col-6 text-right">Kelola Akun
-                        Kelola Akun
+                    <div class="col-6 text-right">
                         <div class="form-group">
                             <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
                         </div>
