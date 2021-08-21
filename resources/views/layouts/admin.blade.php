@@ -224,7 +224,7 @@
                             </li>
                             <li class="nav-item dropdown {{ request()->is('admin/aduan*') ? 'active' : '' }}"><a
                                     href="{{ route('admin.aduan') }}" class="nav-link"><i
-                                        class="icon-user"></i>Aduan</a>
+                                        class="icon-social-dropbox"></i>Aduan</a>
                             </li>
                         </ul>
                     </div>
