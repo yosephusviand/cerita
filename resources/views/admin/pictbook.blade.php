@@ -90,8 +90,8 @@
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $val->nama }}</td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>{{ $val->alamat }}</td>
+                                                    <td>{{ $val->nohp }}</td>
                                                     <td>{{ $val->judul }}</td>
                                                     <td>
                                                         <a href="{{ route('cernak.pdfdownload', $val->id) }}"

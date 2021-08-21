@@ -36,8 +36,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">No HP</label>
-                                    <input type="number" name="nohp" class="form-control" id="nohp"
-                                        placeholder="Tuliskan " value="" autocomplete="off" required>
+                                    <input type="number" name="nohp" class="form-control" id="nohp" placeholder="Tuliskan "
+                                        value="" autocomplete="off" required>
                                     @error('nohp') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
                                 <div class="form-group">
@@ -90,10 +90,8 @@
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $val->nama }}</td>
-                                                    <td></td>notelp
-                                                    notelp
-                                                    notelp
-                                                    <td></td>
+                                                    <td>{{ $val->alamat }}</td>
+                                                    <td>{{ $val->nohp }}</td>
                                                     <td>{{ $val->judul }}</td>
                                                     <td>
                                                         <a href="{{ route('cernak.pdfdownload', $val->id) }}"
