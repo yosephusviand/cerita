@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karya;
 use App\Models\Piagam;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminKaryaController extends Controller
@@ -65,6 +66,10 @@ class AdminKaryaController extends Controller
         if ($data) {
             $piagam         =   new Piagam;
             $piagam->nama   =   $data->nama;
+            $piagam->alamat =   $data->alamat;
+            $piagam->nohp   =   $data->nohp;
+            $piagam->nosurat=   Piagam::nosurat();
+            $piagam->tanggal=   Carbon::now();
             $piagam->jenis  =   2;
             $piagam->save();
         }
