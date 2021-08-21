@@ -21,6 +21,8 @@ class KaryaController extends Controller
 
         $data           =   new Karya;
         $data->nama     =   $request->nama;
+        $data->alamat   =   $request->alamat;
+        $data->nohp     =   $request->nohp;
         $data->judul    =   $request->judul;
         $data->jenis    =   $request->kategori;
         $data->file     =   $filefile;

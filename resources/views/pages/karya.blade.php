@@ -48,9 +48,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">No HP</label>
-                                    <input type="text" name="notelp" class="form-control" id="notelp"
+                                    <input type="number" name="nohp" class="form-control" id="nohp"
                                         placeholder="Tuliskan " value="" autocomplete="off" required>
-                                    @error('notelp') <div class="small text-danger">{{ message }}</div> @enderror
+                                    @error('nohp') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 
                                 <div class="form-group">
