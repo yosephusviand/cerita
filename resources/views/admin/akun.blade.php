@@ -53,7 +53,7 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Data Akun </h2>
+
                             <div class="table-responsive">
                                 <table
                                     class="table table-hover js-basic-example dataTable table-custom table-bordered table-sm">

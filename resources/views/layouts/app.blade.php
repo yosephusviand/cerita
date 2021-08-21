@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
+    <meta name="author" content="Yosephus Wahyu Eko Novianto, S.Kom" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
+    <link rel="icon" href="{{ asset('img/gk.ico') }}" type="image/x-icon">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -20,6 +18,32 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
+        #topbar-notification {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            background: #05ab08;
+            color: #fff;
+            padding: 15px;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: center;
+        }
+
+        #alert-notification {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            background: #e3342f;
+            color: #fff;
+            padding: 15px;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: center;
+        }
+
         .bc {
             background-image: url('img/bcfix.png');
         }
@@ -28,6 +52,22 @@
 </head>
 
 <body class="bc">
+
+    <div id="topbar-notification">
+        <div class="container">
+            <div id="text-notif">
+                My awesome top bar
+            </div>
+        </div>
+    </div>
+
+    <div id="alert-notification">
+        <div class="container">
+            <div id="alert-notif">
+                My awesome top bar
+            </div>
+        </div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -104,8 +144,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -123,7 +162,42 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <script>
+            function showNotif(text) {
+
+                $('#text-notif').html(text);
+                $('#topbar-notification').fadeIn();
+
+                setTimeout(function() {
+                    $('#topbar-notification').fadeOut();
+                }, 2000)
+            }
+
+            function showAlert(text) {
+
+                $('#alert-notif').html(text);
+                $('#alert-notification').fadeIn();
+
+                setTimeout(function() {
+                    $('#alert-notification').fadeOut();
+                }, 2000)
+            }
+        </script>
+
+        @if (!empty(Session::get('status')) && Session::get('status') == '1')
+            <script>
+                showNotif("{{ Session::get('message') }}");
+            </script>
+        @endif
+
+        @if (!empty(Session::get('status')) && Session::get('status') == '2')
+            <script>
+                showAlert("{{ Session::get('message') }}");
+            </script>
+        @endif
     </div>
 </body>
+
 
 </html>

@@ -222,6 +222,10 @@
                                     href="{{ route('admin.akun') }}" class="nav-link"><i
                                         class="icon-user"></i>Akun</a>
                             </li>
+                            <li class="nav-item dropdown {{ request()->is('admin/aduan*') ? 'active' : '' }}"><a
+                                    href="{{ route('admin.aduan') }}" class="nav-link"><i
+                                        class="icon-user"></i>Aduan</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

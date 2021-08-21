@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aduan;
 use App\Models\Diskusi;
 use App\Models\Informasi;
 use App\Models\Piagam;
@@ -294,5 +295,12 @@ class AdminController extends Controller
         $arr    =   ['id' => $data->id, 'nama' => $data->nama, 'tanggal' => $data->tanggal];
 
         return $arr;
+    }
+
+    public function aduan()
+    {
+        $data   =   Aduan::all();
+
+        return view('admin.aduan', compact('data'));
     }
 }
