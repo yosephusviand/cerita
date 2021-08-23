@@ -24,7 +24,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">BAKESBANGPOL</a>
+            <a class="navbar-brand" style="color: black" href="#page-top">BAKESBANGPOL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -46,7 +46,7 @@
                 <img class="img-fluid" src="{{ asset('img/gk.png') }}" alt="alternative" width="100px">
             </div>
             <div class="masthead-heading">POJOK MIGUNANI</div>
-            <div class="masthead-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
+            <div class="masthead-subheading" style="font-size: 30px">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
             <div class="row">
                 <div class="form-group">
                     <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}"

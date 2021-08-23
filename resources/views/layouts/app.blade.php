@@ -45,7 +45,7 @@
         }
 
         .bc {
-            background-image: url('img/bcfix.png');
+            background-image: url('img/background.png');
         }
 
     </style>

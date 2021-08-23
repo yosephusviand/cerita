@@ -119,7 +119,7 @@
 
             position: relative;
             overflow-x: hidden;
-            background-image: url("/img/bcfix.png");
+            background-image: url("/img/background.png");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center center;
