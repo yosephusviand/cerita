@@ -26,6 +26,168 @@
                     <div class="card" style="opacity: 90%">
                         <div class="body">
                             <label for="">Syarat dan Ketentuan</label>
+                            <div class="accordion" id="accordion">
+                                <div>
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Cernak
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Karya bertema wawasan kebangsaan dan nasionalisme.</li>
+                                                <li>Karya ditulis dalam Bahasa Indonesia yang literer (indah, menarik,
+                                                    mengalir) serta komunikatif. Diperbolehkan menggunakan bahasa gaul dan
+                                                    bahasa daerah dalam dialog para tokohnya (jika diperlukan dan sesuai
+                                                    dengan tema).</li>
+                                                <li>Karya ditulis di kertas ukuran A4, diketik berjarak 1,5 spasi, font 11,
+                                                    huruf Arial, margin justified 3 cm. </li>
+                                                <li>Panjang karya cerita anak antara 2 - 4 halaman.</li>
+                                                <li>Karya tidak berisi diskriminasi SARA, melanggar kesusilaan, dan
+                                                    pornografi.</li>
+                                                <li>arya yang dikirim belum dan tidak akan pernah dimuat/diterbitkan dalam
+                                                    media lain.</li>
+                                                <li>Karya 100% merupakan karangan sendiri, buat hasil plagiarisme, saduran,
+                                                    kutipan, atau terjemahan karya orang lain. </li>
+                                                <li>Karya dilampiri dengan biodata singkat dan foto penulis (tidak wajib).
+                                                </li>
+                                                <li>Semua karya yang dikirim (baik yang dimuat maupun tidak) akan menjadi
+                                                    hak milik dari Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul.
+                                                </li>
+                                                <li>Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul berhak melakukan
+                                                    editing dan penyuntingan terhadap karya yang masuk, baik bersifat
+                                                    parsial maupun keseluruhan.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                Komik
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Karya bertema wawasan kebangsaan dan nasionalisme.</li>
+                                                <li>Karya ditulis dalam Bahasa Indonesia yang literer (indah, menarik,
+                                                    mengalir) serta komunikatif. Diperbolehkan menggunakan bahasa gaul dan
+                                                    bahasa daerah dalam dialog para tokohnya (jika diperlukan dan sesuai
+                                                    dengan tema).</li>
+                                                <li>Karya ditulis di kertas ukuran A4, diketik berjarak 1,5 spasi, font 11,
+                                                    huruf Arial, margin justified 3 cm, dan sudah dilengkapi dengan gambar
+                                                    ilustrasi. </li>
+                                                <li>Panjang karya komik antara 2 - 15 halaman.</li>
+                                                <li>Karya tidak berisi diskriminasi SARA, melanggar kesusilaan, dan
+                                                    pornografi.</li>
+                                                <li>Karya yang dikirim belum dan tidak akan pernah dimuat/diterbitkan dalam
+                                                    media lain.</li>
+                                                <li>Karya 100% merupakan karangan sendiri, buat hasil plagiarisme, saduran,
+                                                    kutipan, atau terjemahan karya orang lain. </li>
+                                                <li>Karya dilampiri dengan biodata singkat dan foto penulis (tidak wajib).
+                                                </li>
+                                                <li>Semua karya yang dikirim (baik yang dimuat maupun tidak) akan menjadi
+                                                    hak milik dari Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul.
+                                                </li>
+                                                <li>Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul berhak melakukan
+                                                    editing dan penyuntingan terhadap karya yang masuk, baik bersifat
+                                                    parsial maupun keseluruhan.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                Pictbook
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Karya bertema wawasan kebangsaan dan nasionalisme.</li>
+                                                <li>Karya ditulis dalam Bahasa Indonesia yang literer (indah, menarik,
+                                                    mengalir) serta komunikatif. Diperbolehkan menggunakan bahasa gaul dan
+                                                    bahasa daerah dalam dialog para tokohnya (jika diperlukan dan sesuai
+                                                    dengan tema).</li>
+                                                <li>Karya ditulis di kertas ukuran A4, diketik berjarak 1,5 spasi, font 11,
+                                                    huruf Arial, margin justified 3 cm, dan sudah dilengkapi dengan gambar
+                                                    ilustrasi. </li>
+                                                <li>Panjang karya picturebook antara 2 - 15 halaman.</li>
+                                                <li>Karya tidak berisi diskriminasi SARA, melanggar kesusilaan, dan
+                                                    pornografi.</li>
+                                                <li>Karya yang dikirim belum dan tidak akan pernah dimuat/diterbitkan dalam
+                                                    media lain.</li>
+                                                <li>Karya 100% merupakan karangan sendiri, buat hasil plagiarisme, saduran,
+                                                    kutipan, atau terjemahan karya orang lain. </li>
+                                                <li>Karya dilampiri dengan biodata singkat dan foto penulis (tidak wajib).
+                                                </li>
+                                                <li>Semua karya yang dikirim (baik yang dimuat maupun tidak) akan menjadi
+                                                    hak milik dari Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul.
+                                                </li>
+                                                <li>Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul berhak melakukan
+                                                    editing dan penyuntingan terhadap karya yang masuk, baik bersifat
+                                                    parsial maupun keseluruhan.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                                Pantun & Puisi
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Karya bertema wawasan kebangsaan dan nasionalisme.</li>
+                                                <li>Karya ditulis dalam Bahasa Indonesia yang literer (indah, menarik,
+                                                    mengalir) serta komunikatif.</li>
+                                                <li>Karya ditulis di kertas ukuran A4, diketik berjarak 1,5 spasi, font 11,
+                                                    huruf Arial, margin justified 3 cm. </li>
+                                                <li>Panjang karya puisi / pantun minimal 3 bait (1 bait berisi minimal 4
+                                                    baris).</li>
+                                                <li>Karya tidak berisi diskriminasi SARA, melanggar kesusilaan, dan
+                                                    pornografi.</li>
+                                                <li>Karya yang dikirim belum dan tidak akan pernah dimuat/diterbitkan dalam
+                                                    media lain.</li>
+                                                <li>Karya 100% merupakan karangan sendiri, buat hasil plagiarisme, saduran,
+                                                    kutipan, atau terjemahan karya orang lain. </li>
+                                                <li>Karya dilampiri dengan biodata singkat dan foto penulis (tidak wajib).
+                                                </li>
+                                                <li>Semua karya yang dikirim (baik yang dimuat maupun tidak) akan menjadi
+                                                    hak milik dari Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul.
+                                                </li>
+                                                <li>Badan Kesatuan Bangsa dan Politik Kabupaten Gunungkidul berhak melakukan
+                                                    editing dan penyuntingan terhadap karya yang masuk, baik bersifat
+                                                    parsial maupun keseluruhan.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -48,8 +210,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">No HP</label>
-                                    <input type="number" name="nohp" class="form-control" id="nohp"
-                                        placeholder="Tuliskan " value="" autocomplete="off" required>
+                                    <input type="number" name="nohp" class="form-control" id="nohp" placeholder="Tuliskan "
+                                        value="" autocomplete="off" required>
                                     @error('nohp') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
 
