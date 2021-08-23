@@ -49,11 +49,11 @@
             <div class="masthead-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
             <div class="row">
                 <div class="form-group">
-                    <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}"
+                    <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernaknew.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>
                     <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}"
                             style="opacity: 70%" width="200px" alt=""></a>
-                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pictbook.png') }}" style="opacity: 70%"
+                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pictbooknew.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>
                     <a href="{{ route('puisi') }}" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 70%"
                             width="200px" alt=""></a>
