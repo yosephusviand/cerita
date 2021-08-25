@@ -22,7 +22,7 @@ Route::name('front.')->middleware('visitor')->group(function () {
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware('visitor')->group(function () {
+// Route::middleware('visitor')->group(function () {
     Route::get('/karya', [\App\Http\Controllers\KaryaController::class, 'index'])->name('karya');
     Route::post('/karya', [\App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
@@ -52,7 +52,7 @@ Route::middleware('visitor')->group(function () {
 
     Route::get('/aduan', [\App\Http\Controllers\AduanController::class, 'index'])->name('aduan');
     Route::post('/aduan', [\App\Http\Controllers\AduanController::class, 'store'])->name('aduan.store');
-});
+// });
 
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::get('/admin/diskusi', [\App\Http\Controllers\AdminController::class, 'diskusi'])->name('admin.diskusi');
