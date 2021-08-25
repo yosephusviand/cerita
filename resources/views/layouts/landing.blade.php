@@ -39,43 +39,56 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+    <section class="page-section" style="text-align: center">
+    {{-- <header class="masthead"> --}}
         <div class="container">
 
             <div class="text-right">
                 <img class="img-fluid" src="{{ asset('img/gk.png') }}" alt="alternative" width="100px">
             </div>
-            <div class="masthead-heading">POJOK MIGUNANI</div>
-            <div class="masthead-subheading" style="font-size: 30px">Mari Gugah Nasionalisme Anak Dengan Literasi</div>
+            <h2 class="section-heading">POJOK MIGUNANI</h2>
+            {{-- <div class="masthead-heading text-uppercase" style="font-size: 40px">POJOK MIGUNANI</div> --}}
+            <h3 class="section-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</h3>
+            {{-- <div class="masthead-subheading" style="font-size: 30px">Mari Gugah Nasionalisme Anak Dengan Literasi</div> --}}
             <div class="row">
                 <div class="form-group">
                     <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}"
                             style="opacity: 100%" width="200px" alt=""></a>
                     <a href="{{ route('komik') }}" class="btn "><img src="{{ asset('img/komik.png') }}"
                             style="opacity: 100%" width="200px" alt=""></a>
-                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pictbook.png') }}" style="opacity: 100%"
-                            width="200px" alt=""></a>
-                    <a href="{{ route('puisi') }}" class="btn "><img src="{{ asset('img/puisi.png') }}" style="opacity: 100%"
-                            width="200px" alt=""></a>
+                    <a href="{{ route('pictbook') }}" class="btn "><img src="{{ asset('img/pictbook.png') }}"
+                            style="opacity: 100%" width="200px" alt=""></a>
+                    <a href="{{ route('puisi') }}" class="btn "><img src="{{ asset('img/puisi.png') }}"
+                            style="opacity: 100%" width="200px" alt=""></a>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="form-group">
-                    <a href="{{ route('piagam') }}" class="btn "><img src="{{ asset('img/piagam.png') }}" style="opacity: 100%" width="200px"
-                            alt=""></a>
-                    <a href="{{ route('informasi') }}" class="btn "><img src="{{ asset('img/informasi.png') }}" style="opacity: 100%" width="200px"
-                            alt=""></a>
+                    <a href="{{ route('piagam') }}" class="btn "><img src="{{ asset('img/piagam.png') }}"
+                            style="opacity: 100%" width="200px" alt=""></a>
+                    <a href="{{ route('informasi') }}" class="btn "><img src="{{ asset('img/informasi.png') }}"
+                            style="opacity: 100%" width="200px" alt=""></a>
                     <a href="{{ route('karya') }}" class="btn "><img src="{{ asset('img/karya.png') }}"
                             style="opacity: 100%" width="200px" alt=""></a>
-                    <a href="{{ route('diskusi') }}" class="btn "><img src="{{ asset('img/diskusi.png') }}" style="opacity: 100%" width="200px"
-                            alt=""></a>
+                    <a href="{{ route('diskusi') }}" class="btn "><img src="{{ asset('img/diskusi.png') }}"
+                            style="opacity: 100%" width="200px" alt=""></a>
                 </div>
             </div>
 
         </div>
-    </header>
-    <!-- Services-->
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 text-lg-start">
+                <div class="text-center"><button class="btn btn-danger btn-sm text-uppercase"
+                        type="button"><b>Pengunjung : {{ Visitor::count() }}</b></button></div>
+            </div>
+        </div>
+
+    {{-- </header> --}}
+
+    </section>
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>

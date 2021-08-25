@@ -12,12 +12,12 @@ class Visitors
     public function handle(Request $request, Closure $next)
     {
         $ip = $request->ip();
-        if (ModelsVisitors::where('date', today())->where('ip', $ip)->count() < 1) {
+        // if (ModelsVisitors::where('date', today())->where('ip', $ip)->count() < 1) {
             ModelsVisitors::create([
                 'date' => today(),
                 'ip' => $ip,
             ]);
-        }
+        // }
         return $next($request);
     }
 }

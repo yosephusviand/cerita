@@ -9,4 +9,9 @@ class Visitors extends Model
 {
     use HasFactory;
     protected $fillable = ['date', 'ip'];
+
+    public static function countvisitor()
+    {
+        return Visitors::count();
+    }
 }

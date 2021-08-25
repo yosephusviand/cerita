@@ -233,6 +233,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Piagam' => App\Models\Piagam::class,
+        'Visitor' => \App\Models\Visitors::class,
     ],
 
 ];
