@@ -13,40 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.landing');
+Route::name('front.')->middleware('visitor')->group(function () {
+    Route::get('/', function () {
+        return view('layouts.landing');
+    });
 });
 
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('visitor')->group(function () {
+    Route::get('/karya', [\App\Http\Controllers\KaryaController::class, 'index'])->name('karya');
+    Route::post('/karya', [\App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
 
-Route::get('/karya', [\App\Http\Controllers\KaryaController::class, 'index'])->name('karya');
-Route::post('/karya', [\App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
+    Route::get('/cernak', [App\Http\Controllers\CernakController::class, 'index'])->name('cernak');
+    Route::get('/cernak/pdf/{id}', [\App\Http\Controllers\CernakController::class, 'liatpdf'])->name('cernak.pdf');
+    Route::get('/cernak/downloadpdf/{id}', [\App\Http\Controllers\CernakController::class, 'pdfdownload'])->name('cernak.pdfdownload');
+    Route::get('/cernak/previewpdf/{id}', [\App\Http\Controllers\CernakController::class, 'previewpdf'])->name('cernak.previewpdf');
 
-Route::get('/cernak', [App\Http\Controllers\CernakController::class, 'index'])->name('cernak');
-Route::get('/cernak/pdf/{id}', [\App\Http\Controllers\CernakController::class, 'liatpdf'])->name('cernak.pdf');
-Route::get('/cernak/downloadpdf/{id}', [\App\Http\Controllers\CernakController::class, 'pdfdownload'])->name('cernak.pdfdownload');
-Route::get('/cernak/previewpdf/{id}', [\App\Http\Controllers\CernakController::class, 'previewpdf'])->name('cernak.previewpdf');
+    Route::get('/komik', [\App\Http\Controllers\KomikController::class, 'index'])->name('komik');
+    Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'liatpdf'])->name('komik.pdf');
+    Route::get('/komik/downloadpdf/{id}', [\App\Http\Controllers\KomikController::class, 'pdfdownload'])->name('komik.pdfdownload');
+    Route::get('/komik/previewpdf/{id}', [\App\Http\Controllers\KomikController::class, 'previewpdf'])->name('komik.previewpdf');
 
-Route::get('/komik', [\App\Http\Controllers\KomikController::class, 'index'])->name('komik');
-Route::get('/komik/pdf/{id}', [\App\Http\Controllers\KomikController::class, 'liatpdf'])->name('komik.pdf');
-Route::get('/komik/downloadpdf/{id}', [\App\Http\Controllers\KomikController::class, 'pdfdownload'])->name('komik.pdfdownload');
-Route::get('/komik/previewpdf/{id}', [\App\Http\Controllers\KomikController::class, 'previewpdf'])->name('komik.previewpdf');
+    Route::get('/pictbook', [\App\Http\Controllers\PitcbookController::class, 'index'])->name('pictbook');
+    Route::get('/puisi', [\App\Http\Controllers\PuisiController::class, 'index'])->name('puisi');
 
-Route::get('/pictbook', [\App\Http\Controllers\PitcbookController::class, 'index'])->name('pictbook');
-Route::get('/puisi', [\App\Http\Controllers\PuisiController::class, 'index'])->name('puisi');
+    Route::get('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'index'])->name('diskusi');
+    Route::post('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'store'])->name('diskusi.store');
 
-Route::get('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'index'])->name('diskusi');
-Route::post('/diskusi', [\App\Http\Controllers\DiskusiController::class, 'store'])->name('diskusi.store');
+    Route::get('/informasi', [\App\Http\Controllers\InformasiController::class, 'index'])->name('informasi');
+    Route::get('/informasi/image/{id}', [\App\Http\Controllers\InformasiController::class, 'liatfoto'])->name('image.informasi');
 
-Route::get('/informasi', [\App\Http\Controllers\InformasiController::class, 'index'])->name('informasi');
-Route::get('/informasi/image/{id}', [\App\Http\Controllers\InformasiController::class, 'liatfoto'])->name('image.informasi');
+    Route::get('/piagam', [App\Http\Controllers\PiagamController::class, 'index'])->name('piagam');
+    Route::post('/piagam', [App\Http\Controllers\PiagamController::class, 'store'])->name('piagam.store');
+    Route::get('/generate-pdf/{id}', [App\Http\Controllers\PDFController::class, 'index'])->name('pdf');
+    Route::get('/piagam/gambar{id}', [App\Http\Controllers\PDFController::class, 'liatfoto'])->name('pdf.liatfoto');
 
-Route::get('/piagam', [App\Http\Controllers\PiagamController::class, 'index'])->name('piagam');
-Route::post('/piagam', [App\Http\Controllers\PiagamController::class, 'store'])->name('piagam.store');
-Route::get('/generate-pdf/{id}', [App\Http\Controllers\PDFController::class, 'index'])->name('pdf');
-Route::get('/piagam/gambar{id}', [App\Http\Controllers\PDFController::class, 'liatfoto'])->name('pdf.liatfoto');
+    Route::get('/aduan', [\App\Http\Controllers\AduanController::class, 'index'])->name('aduan');
+    Route::post('/aduan', [\App\Http\Controllers\AduanController::class, 'store'])->name('aduan.store');
+});
 
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::get('/admin/diskusi', [\App\Http\Controllers\AdminController::class, 'diskusi'])->name('admin.diskusi');
@@ -95,7 +101,3 @@ Route::get('/admin/piagamanak', [\App\Http\Controllers\AdminController::class, '
 Route::get('/admin/piagamanak/delete/{id}', [\App\Http\Controllers\AdminController::class, 'destroyanak'])->name('admin.piagamanakdelete');
 
 Route::get('/admin/aduan', [\App\Http\Controllers\AdminController::class, 'aduan'])->name('admin.aduan');
-
-Route::get('/aduan', [\App\Http\Controllers\AduanController::class, 'index'])->name('aduan');
-Route::post('/aduan', [\App\Http\Controllers\AduanController::class, 'store'])->name('aduan.store');
-
