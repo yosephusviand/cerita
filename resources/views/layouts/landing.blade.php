@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 text-lg-start">
                 <div class="text-center"><button class="btn btn-danger btn-sm text-uppercase"
-                        type="button"><b>Pengunjung : {{ Visitor::count() }}</b></button></div>
+                        type="button"><b>Pengunjung : {{ number_format(Visitor::count(),0) }}</b></button></div>
             </div>
         </div>
 
