@@ -40,16 +40,12 @@
     </nav>
     <!-- Masthead-->
     <section class="page-section" style="text-align: center">
-    {{-- <header class="masthead"> --}}
         <div class="container">
-
             <div class="text-right">
                 <img class="img-fluid" src="{{ asset('img/gk.png') }}" alt="alternative" width="100px">
             </div>
             <h2 class="section-heading">POJOK MIGUNANI</h2>
-            {{-- <div class="masthead-heading text-uppercase" style="font-size: 40px">POJOK MIGUNANI</div> --}}
             <h3 class="section-subheading">Mari Gugah Nasionalisme Anak Dengan Literasi</h3>
-            {{-- <div class="masthead-subheading" style="font-size: 30px">Mari Gugah Nasionalisme Anak Dengan Literasi</div> --}}
             <div class="row">
                 <div class="form-group">
                     <a href="{{ route('cernak') }}" class="btn "><img src="{{ asset('img/cernak.png') }}"
@@ -78,15 +74,13 @@
 
         </div>
         <br>
-        <br>
+        {{-- <br> --}}
         <div class="row">
-            <div class="col-4 text-lg-start">
+            <div class="col-lg-4 col-md-6 text-lg-start">
                 <div class="text-center"><button class="btn btn-danger btn-sm text-uppercase"
                         type="button"><b>Pengunjung : {{ Visitor::count() }}</b></button></div>
             </div>
         </div>
-
-    {{-- </header> --}}
 
     </section>
 
