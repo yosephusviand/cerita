@@ -11,7 +11,7 @@ class Visitors
 {
     public function handle(Request $request, Closure $next)
     {
-        $ip = hash('sha512', $request->ip());
+        $ip = $request->ip();
         if (ModelsVisitors::where('date', today())->where('ip', $ip)->count() < 1) {
             ModelsVisitors::create([
                 'date' => today(),
