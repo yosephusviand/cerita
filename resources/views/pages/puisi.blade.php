@@ -34,7 +34,7 @@
                                                 <label for="">{{ $val->judul }}</label>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <a href="{{ route('komik.pdfdownload', $val->id) }}" class="btn btn-primary btn-block">Download</a>
+                                                    <a href="{{ route('komik.pdfdownload', $val->id) }}" class="btn btn-primary btn-block">Unduh</a>
                                                 </div>
                                                 <div class="col-6">
                                                     <a href="{{ route('komik.previewpdf', $val->id) }}" class="btn btn-primary btn-block" target="_blank">Baca</a>
