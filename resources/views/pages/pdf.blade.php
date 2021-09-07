@@ -119,7 +119,7 @@
                 </div>
             </th>
             <th></th>
-            <th style="text-align: center"><img src="{{ $path }}" width="150px"></th>
+            <th style="text-align: center"><img src="{{ $path }}" width="100px"></th>
         </tr>
         <tr>
             <th></th>
