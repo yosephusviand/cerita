@@ -227,7 +227,7 @@ class AdminController extends Controller
             if ($request->idedit == '') {
                 $data           =   new Informasi;
                 $data->nama     =   $request->nama;
-                $data->tanggal  =   $request->tanggal;
+                // $data->tanggal  =   $request->tanggal;
                 $data->foto     =   $filefile;
                 $data->save();
                 if ($data) {
@@ -237,7 +237,7 @@ class AdminController extends Controller
             } else {
                 $data           =   Informasi::find($request->idedit);
                 $data->nama     =   $request->nama;
-                $data->tanggal  =   $request->tanggal;
+                // $data->tanggal  =   $request->tanggal;
                 $data->foto     =   $filefile;
                 $data->save();
                 if ($data) {
@@ -249,12 +249,12 @@ class AdminController extends Controller
             if ($request->idedit == '') {
                 $data           =   new Informasi;
                 $data->nama     =   $request->nama;
-                $data->tanggal  =   $request->tanggal;
+                // $data->tanggal  =   $request->tanggal;
                 $data->save();
             } else {
                 $data           =   Informasi::find($request->idedit);
                 $data->nama     =   $request->nama;
-                $data->tanggal  =   $request->tanggal;
+                // $data->tanggal  =   $request->tanggal;
                 $data->save();
             }
         }

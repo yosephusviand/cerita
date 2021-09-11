@@ -32,10 +32,10 @@
                                 <div class="pw_header">
                                     <h6>{{ $val->nama }}</h6>
                                 </div>
-                                <div class="pw_meta">
+                                {{-- <div class="pw_meta">
                                     <p> Pelaksanaan tanggal {{ date('d-m-Y', strtotime($val->tanggal)) }}
                                     </p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

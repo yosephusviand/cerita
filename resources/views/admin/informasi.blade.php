@@ -29,12 +29,12 @@
                                         value="" autocomplete="off" required>
                                     @error('nama') <div class="small text-danger">{{ message }}</div> @enderror
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="">Tanggal Pelaksanaan</label>
                                     <input type="date" name="tanggal" class="form-control" id="tanggal"
                                         placeholder="Tuliskan " value="" autocomplete="off" required>
                                     @error('tanggal') <div class="small text-danger">{{ message }}</div> @enderror
-                                </div>
+                                </div> --}}
 
                                 <label for="">Upload File</label>
                                 <div class="form-group shadow">
@@ -58,7 +58,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Tanggal</th>
+                                            {{-- <th>Tanggal</th> --}}
                                             <th>Gambar</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
@@ -69,7 +69,7 @@
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $val->nama }}</td>
-                                                <td>{{ $val->tanggal }}</td>
+                                                {{-- <td>{{ $val->tanggal }}</td> --}}
                                                 <td>
                                                     <img src="{{ route('image.liatinfo', $val->id) }}" alt="" title=""
                                                         width="100px">
