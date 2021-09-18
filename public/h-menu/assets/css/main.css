@@ -7493,20 +7493,20 @@ ul.choose-skin li span,
 }
 
 .project_widget .pw_content .pw_header {
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid #f0f0f0
 }
 
 .project_widget .pw_content .pw_header small {
-    font-size: 12px
+    font-size: 10px
 }
 
 .project_widget .pw_content .pw_meta {
-    padding: 20px
+    padding: 10px
 }
 
 .project_widget .pw_content .pw_meta span {
-    font-weight: 500
+    font-weight: 100
 }
 
 .page-loader-wrapper {
