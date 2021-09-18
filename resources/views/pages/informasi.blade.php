@@ -44,7 +44,7 @@
                         <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="title" id="largeModalLabel">{{ $val->nama }}</h4>
+                                    <h6 class="title" id="largeModalLabel">{{ $val->nama }}</h6>
                                 </div>
                                 <div class="modal-body">
                                     <img class="img-fluid" width="100%" class="imagepreview"
