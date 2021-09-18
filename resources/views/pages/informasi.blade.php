@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="modal fade" id="largeModal{{ $val->id }}" tabindex="-1" role="dialog">
-                        <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h6 class="title" id="largeModalLabel">{{ $val->nama }}</h6>
