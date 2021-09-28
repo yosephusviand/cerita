@@ -35,7 +35,7 @@
             <td rowspan=""><img src="./img/gk.png" alt="" width="80px"></td>
             <td style="text-align: left; font-size: 16px; line-height: 8px">
                 <p><b>PEMERINTAH DAERAH</b></p>
-                <p><b>KAPUTATEN GUNUNGKIDUL</b></p>
+                <p><b>KABUPATEN GUNUNGKIDUL</b></p>
                 <p><b>BADAN KESATUAN BANGSA DAN POLITIK</b></p>
             </td>
         </tr>
