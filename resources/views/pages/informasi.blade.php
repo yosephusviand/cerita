@@ -27,7 +27,7 @@
                         <div class="card project_widget">
                             <a href="#largeModal{{ $val->id }}" data-toggle="modal" data-target="#largeModal{{ $val->id }}">
                                 <div class="pw_img">
-                                    <img class="img-fluid" width="100%" class="imagepreview"
+                                    <img class="img-fluid img-thumbnail" width="100%" style="height: 200px; object-fit: contain" class="imagepreview"
                                         id="gambar{{ $val->id }}" data-kode="{{ $val->id }}"
                                         src="{{ route('image.informasi', $val->id) }}" alt="About the image">
                                 </div>
