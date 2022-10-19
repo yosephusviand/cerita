@@ -9,7 +9,7 @@ class PitcbookController extends Controller
 {
     public function index()
     {
-        $data   =   Karya::where('jenis', 3)->where('status', 2)->paginate(12);
+        $data   =   Karya::where('jenis', 3)->where('status', 2)->simplePaginate(6);
         return view('pages.pictbook', compact('data'));
     }
 }

@@ -9,7 +9,7 @@ class PuisiController extends Controller
 {
     public function index()
     {
-        $data   =   Karya::where('jenis', 4)->where('status', 2)->paginate(12);
+        $data   =   Karya::where('jenis', 4)->where('status', 2)->simplePaginate(6);
         return view('pages.puisi', compact('data'));
     }
 }
